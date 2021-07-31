@@ -17,10 +17,14 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public Optional<User> getUser(UUID userID) {
+    public User getUser(UUID userID) {
         Optional<User> userOptional = userRepository.findById(userID);
-        userOptional.ifPresent(user -> log.info("User get : {}", user));
-        return userOptional;
+        if(userOptional.isPresent()) {
+            User user = userOptional.get();
+            log.info("User get : {}", user);
+            return user;
+        }
+        return null;
     }
 
     public User createUser(User user) {
@@ -32,4 +36,16 @@ public class UserService {
     public List<User> getUsers() {
         return userRepository.findAll();
     }
+
+    public User deleteUser(UUID userID) {
+        Optional<User> userOptional = userRepository.findById(userID);
+        if(userOptional.isPresent()) {
+            User user = userOptional.get();
+            userRepository.deleteById(userID);
+            log.info("User deleted : {}", user);
+            return user;
+        }
+        return null;
+    }
+
 }
