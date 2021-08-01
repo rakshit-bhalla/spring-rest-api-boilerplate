@@ -17,6 +17,12 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * Returns User by taking UserID
+     *
+     * @param userID UserID of the user
+     * @return User
+     */
     public User getUser(UUID userID) {
         Optional<User> userOptional = userRepository.findById(userID);
         if(userOptional.isPresent()) {
@@ -27,16 +33,33 @@ public class UserService {
         return null;
     }
 
+    /**
+     * Returns User by adding it into the db
+     *
+     * @param user User
+     * @return User
+     */
     public User createUser(User user) {
         User savedUser = userRepository.save(user);
         log.info("User created : {}", savedUser);
         return savedUser;
     }
 
+    /**
+     * Returns a list of all users
+     *
+     * @return List of User
+     */
     public List<User> getUsers() {
         return userRepository.findAll();
     }
 
+    /**
+     * Returns User by deleting it using UserID from the db
+     *
+     * @param userID UserID of the user
+     * @return User
+     */
     public User deleteUser(UUID userID) {
         Optional<User> userOptional = userRepository.findById(userID);
         if(userOptional.isPresent()) {
