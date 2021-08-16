@@ -1,10 +1,8 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg" width="320" alt="Spring Logo" /></a>
+  <a href="https://spring.io/" target="blank"><img src="https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg" width="320" alt="Spring Logo" /></a>
 </p>
 
   <p align="center">Boilerplate code for REST API in <a href="https://spring.io/" target="_blank">Spring</a> framework for building efficient and scalable server-side applications.</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
 
